@@ -21,7 +21,6 @@ router.get("/", async (req, res) => {
       }
     }
   } catch (error) {
-    console.log("entro error");
     return res.status(404).send("Pokemon not found");
   }
 });
@@ -33,7 +32,6 @@ router.get("/:id", async (req, res) => {
     const pokeFoundId = await getPokeById(id);
     if (pokeFoundId) return res.status(200).json(pokeFoundId);
   } catch (error) {
-    console.log("entro error");
     return res.status(404).send("Pokemon not found");
   }
 });

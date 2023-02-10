@@ -4,7 +4,7 @@ const pokemonsRoute = require('./pokemons');
 
 const router = Router();
 
-router.use("/pokemons", pokemonsRoute);   //aqui expongo las rutas de pokemons
-router.use("/types", typesRoute);    //aqui expongo las rutas de types
+router.use("/pokemons", pokemonsRoute);   //rutas de pokemons
+router.use("/types", typesRoute);    //rutas de types
 
 module.exports = router;

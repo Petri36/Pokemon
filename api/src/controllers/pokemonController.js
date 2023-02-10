@@ -20,10 +20,10 @@ const getPokeapi = async () => {
     }
 };
 
-//me permite obtener los pokemons de la DB
+//obtener los pokemons de la DB
 const getPokedb = async () => {
     try {
-        return await Pokemon.findAll({       //trae los pokemones, que incluyan el nombre del type (tipo join)
+        return await Pokemon.findAll({       //trae los pokemones, que incluyan el nombre del type
             include: {
                 model: Type,
                 attributes: ['name'],        //me trae el name del type
@@ -35,7 +35,7 @@ const getPokedb = async () => {
     }
 };
 
-//me permite unir el array que me devuelve la pokeapi (40) pokemons + los pokemons creados en la DB pokemons
+//une el array que me devuelve la pokeapi + los pokemons creados en la DB pokemons
 const getAllPoke = async () => {
     try {
         const apiPokeData = await getPokeapi();
@@ -103,8 +103,7 @@ const getPokeById = async (id) => {
         } else {
             const searchPokeapiId = await axios.get(`${URL_API_POKEMON_NAME_OR_ID}${id.toString()}`);
             const foundPokeapiId = objPokeApi(searchPokeapiId.data);
-            // console.log('foundPokeapi', foundPokeapiId)
-            return foundPokeapiId;     //pokemon por id en pokeapi
+            return foundPokeapiId;    //pokemon por id en pokeapi
         }
     } catch (error) {
         console.log(error);
@@ -133,7 +132,6 @@ const objPokeApi = (poke) => {
 
 
 //permite hacer post de pokemon
-
 const postPokedb = async (pokeData) => {
     try {
         const { name, life, attack, defense, speed, height, weight, sprite, types } = pokeData;

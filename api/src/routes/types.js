@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
         currentTypes = currentTypes.filter(type => type !== "unknown" && type !== "shadow") 
         return res.status(200).send(currentTypes);
     }catch(error){
-        return res.status(400).send('No se encontraron tipos')
+        return res.status(400).send('No se encontraron los types')
     }
 });
 
