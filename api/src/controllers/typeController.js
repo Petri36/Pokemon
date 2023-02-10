@@ -1,4 +1,4 @@
-const axios = require('axios');  //cambie la sintaxis de const axios a EMCAscript 6 pero me fallo
+const axios = require('axios');
 const { Type } = require('../db');
 const { URL_API_POKEMON_TYPE } = require('../utils/GlobalConst');
 

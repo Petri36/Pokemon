@@ -23,10 +23,10 @@ const getPokeapi = async () => {
 //obtener los pokemons de la DB
 const getPokedb = async () => {
     try {
-        return await Pokemon.findAll({       //trae los pokemones, que incluyan el nombre del type
+        return await Pokemon.findAll({  //trae los pokemones, que incluyan el nombre del type
             include: {
                 model: Type,
-                attributes: ['name'],        //me trae el name del type
+                attributes: ['name'],   //me trae el name del type
             }
         })
     } catch (error) {
@@ -52,7 +52,7 @@ const getAllPoke = async () => {
 const getPokeByName = async (name) => {
     try {
         const searchPokeNameDB = await Pokemon.findOne({
-            where: { name },            //encuentra primera coincidencia
+            where: { name },   //encuentra primera coincidencia
             include: { model: Type }
         })
         if (searchPokeNameDB) {
@@ -72,7 +72,6 @@ const getPokeByName = async (name) => {
         }else {
             const searchPokeapiName = await axios.get(`${URL_API_POKEMON_NAME_OR_ID}${name.toLowerCase()}`);       //obtengo el pokemon de la url/name
             const foundPokeapiName = objPokeApi(searchPokeapiName.data);
-            // console.log('foundPokeapi', foundPokeapiName)
             return foundPokeapiName
         }
     } catch (error) {
