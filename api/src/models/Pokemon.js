@@ -6,7 +6,7 @@ module.exports = (sequelize) => {   //modelos sequelize
   sequelize.define('pokemon', {
     id: {
       type: DataTypes.UUID,           //para que me genere un Id unico.
-      defaultValue: DataTypes.UUIDV4,  //por defecto generado según la norma UUID v4
+      defaultValue: DataTypes.UUIDV4, //por defecto generado según la norma UUID v4
       primaryKey: true,
     },
     name: {
@@ -32,12 +32,6 @@ module.exports = (sequelize) => {   //modelos sequelize
     },
     weight: {
       type: DataTypes.INTEGER,
-    },
-    //image
-    sprite:{
-      type: DataTypes.STRING,
-      validate: {isUrl: true},
-      defaultValue: "https://imagenpng.com/wp-content/uploads/2016/09/Pokebola-pokeball-png-0.png"
     },
   });
 };
