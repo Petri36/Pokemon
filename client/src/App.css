@@ -1,5 +1,12 @@
+body{
+  background: #6ef0f0
+}
 .App {
   text-align: center;
+}
+
+.capitalizeText{
+  text-transform: capitalize;
 }
 
 .App-logo {

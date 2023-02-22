@@ -64,6 +64,7 @@ const getPokeByName = async (name) => {
                 speed: searchPokeNameDB.speed,
                 height: searchPokeNameDB.height,
                 weight: searchPokeNameDB.weight,
+                sprite: searchPokeNameDB.sprite,
                 types: searchPokeNameDB.types.length < 2 ? [searchPokeNameDB.types[0]] : [searchPokeNameDB.types[0], searchPokeNameDB.types[1]]
             }
             return pokedbName;
@@ -93,6 +94,7 @@ const getPokeById = async (id) => {
                 speed: searchPokeIdDB.speed,
                 height: searchPokeIdDB.height,
                 weight: searchPokeIdDB.weight,
+                sprite: searchPokeNameDB.sprite,
                 types: searchPokeIdDB.types.length < 2 ? [searchPokeIdDB.types[0]] : [searchPokeIdDB.types[0] , searchPokeIdDB.types[1]]
             }
             return pokedbId;
@@ -119,6 +121,7 @@ const objPokeApi = (poke) => {
         speed: poke.stats[5].base_stat,
         height: poke.height,
         weight: poke.weight,
+        sprite: poke.sprites.other.dream_world.front_default,
         types: poke.types.length < 2 ? [{ name: poke.types[0].type.name}] : [{ name: poke.types[0].type.name}, { name: poke.types[1].type.name}]
     };
     return objPokeapi
@@ -128,7 +131,7 @@ const objPokeApi = (poke) => {
 //permite hacer post de pokemon
 const postPokedb = async (pokeData) => {
     try {
-        const { name, life, attack, defense, speed, height, weight, types } = pokeData;
+        const { name, life, attack, defense, speed, height, weight, sprite, types } = pokeData;
         const myPoke = await Pokemon.create(
             {
                 name,
@@ -138,6 +141,7 @@ const postPokedb = async (pokeData) => {
                 speed,
                 height,
                 weight,
+                sprite,
             }
         );
         const pokeTypedb = await Type.findAll({
