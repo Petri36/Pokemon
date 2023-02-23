@@ -11,9 +11,9 @@ export const Detail = () => {
   const pokemonDetail = useSelector((state) => state.pokemonDetail);  // acceder y utilizar los datos del detalle de un pokemon.
   const { id } = useParams();
 
-  useEffect(() => {  //  realizar una acción cuando se carga o actualiza el componente
+  useEffect(() => {
     dispatch(getPokemonDetail(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   const { sprite, life, types, name, height, attack, defense, speed, weight } =
     pokemonDetail;
