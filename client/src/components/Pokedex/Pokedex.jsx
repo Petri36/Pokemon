@@ -9,12 +9,12 @@ import { PokeNotFound } from "../pokeNotFound/PokeNotFound";
 import "./pokedex.scss";
 
 export const Pokedex = ({ pokeTotal }) => {
-  const cards = 9;
-  const [pokeCurrent, setPokeCurrent] = useState(pokeTotal); //lo cargo
+  const cards = 12; // cambiamos a 12
+  const [pokeCurrent, setPokeCurrent] = useState(pokeTotal);
 
   useEffect(() => {
-    setPokeCurrent([...pokeTotal].splice(0, cards)); //copia del poketotal
-  }, [pokeTotal]);
+    setPokeCurrent([...pokeTotal].splice(0, cards));
+  }, [pokeTotal, cards]); // agregamos "cards" como dependencia
 
   return (
     <div className="page-principal">
