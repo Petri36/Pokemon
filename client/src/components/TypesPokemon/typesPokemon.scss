@@ -8,11 +8,26 @@
     .typesFilterButton{
         background: transparent;
         border: 0;
+        color: #e4000f;
+        font-family: "Quicksand", sans-serif;  
+        font-size: 1.2rem;
+        margin: 0 1rem;
+        cursor: pointer;
+        transition: all .2s;
+
+        &:hover {
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
     }
 
     span {
         font-size: 0.75rem;
-        color: black;
+        color: #4a4a4a;
         font-family: "Quicksand", sans-serif;  
     }
 
@@ -28,9 +43,17 @@
         margin-bottom: .25rem;
         cursor: pointer;
         transition: all .2s;
-        border: 1px solid #ff7541;
-        background-color:#ff7541
+        border: 1px solid #e4000f;
+        background-color: #f8d030;
+
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px 2px #0098e4;
+        }
+
+        img {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
     }
 }
-
-

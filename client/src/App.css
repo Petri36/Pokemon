@@ -1,5 +1,8 @@
-body{
-  background: #6ef0f0
+body {
+  background-image: url('https://wallpaperaccess.com/full/8668.jpg');
+  background-size: cover; /* Ajustar tamaño de imagen */
+  background-position: center; /* Centrar imagen */
+  background-attachment: fixed; /* Fijar imagen */
 }
 .App {
   text-align: center;

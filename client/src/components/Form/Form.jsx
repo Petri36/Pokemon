@@ -57,7 +57,7 @@ export const Form = () => {
   return (
     <main className="form-container">
       <div className="detailCard">
-        <h2 className="title">Create your favorite Pokemon</h2>
+        <h2 className="title">Create your Pokemon</h2>
       </div>
       <div className="pokemonData">
         <form onSubmit={(event) => handleSubmit(event)} className="divCreate">

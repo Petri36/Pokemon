@@ -9,12 +9,12 @@ import { PokeNotFound } from "../pokeNotFound/PokeNotFound";
 import "./pokedex.scss";
 
 export const Pokedex = ({ pokeTotal }) => {
-  const cards = 12; // cambiamos a 12
+  const cards = 12; // 12 por pág.
   const [pokeCurrent, setPokeCurrent] = useState(pokeTotal);
 
   useEffect(() => {
     setPokeCurrent([...pokeTotal].splice(0, cards));
-  }, [pokeTotal, cards]); // agregamos "cards" como dependencia
+  }, [pokeTotal, cards]); // agregamos "cards" como dependencia.
 
   return (
     <div className="page-principal">
